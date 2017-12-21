@@ -1,0 +1,130 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css"/>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+</head>
+<body>
+<script type="text/ng-template" id="pages/home.html">
+    <h1>Home</h1>
+    <div class="container marketing">
+        <form>
+            <div class="form-group">
+                <label for="fio">FIO</label>
+                <input type="text" class="form-control" id="fio" placeholder="FIO">
+            </div>
+            <div class="form-group">
+                <label for="service">choose service: </label>
+                <select id="service" name="service">
+                    <option>Make up</option>
+                    <option>Cut hair</option>
+                    <option>Make manicure</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="master">choose master: </label>
+                <select id="master" name="master">
+                    <option>Anna Fedorowna</option>
+                    <option>Valeriya Petrovna</option>
+                    <option>Sergey Grishenko</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" class="form-control" id="date">
+            </div>
+            <div class="form-group">
+                <label for="time">choose time: </label>
+                <select id="time" name="time">
+                    <option>19-40</option>
+                    <option>20-40</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        </div>
+    <div class="row">
+        <div class="col-lg-4">
+            <img class="img-circle" src="https://assets.entrepreneur.com/content/3x2/1300/20150406145944-dos-donts-taking-perfect-linkedin-profile-picture-selfie-mobile-camera-2.jpeg" alt="Generic placeholder image" width="140" height="140">
+            <h2>Anna Fedorowna</h2>
+            <p>Nail master</p>
+            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <img class="img-circle" src="https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg-1024x683.jpg" alt="Generic placeholder image" width="140" height="140">
+            <h2>Valeriya Petrovna</h2>
+            <p>Hair master</p>
+            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <img class="img-circle" src="http://keenthemes.com/preview/metronic/theme/assets/pages/media/profile/profile_user.jpg" alt="Generic placeholder image" width="140" height="140">
+            <h2>Sergey Grishenko</h2>
+            <p>Make up master</p>
+            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+</script>
+<script type="text/ng-template" id="pages/order.html">
+    <hr>
+    <h1>Orders</h1>
+    <form>
+        <div class="form-group">
+            <label for="master1">choose master: </label>
+            <select id="master1" name="master">
+                <option>Anna Fedorowna</option>
+                <option>Valeriya Petrovna</option>
+                <option>Sergey Grishenko</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
+    <table class="table">
+        <tr>
+            <td>master</td>
+            <td>ysluga</td>
+            <td>data</td>
+            <td>time</td>
+            <td>cena</td>
+        </tr>
+        <tr>
+            <td>Anna Fedorowna</td>
+            <td>Make manicure</td>
+            <td>22.11.2017</td>
+            <td>19-00</td>
+            <td>500 grn</td>
+        </tr>
+        <tr>
+            <td>Valeriya Petrovna</td>
+            <td>Cut hair</td>
+            <td>22.11.2017</td>
+            <td>19-00</td>
+            <td>300 grn</td>
+        </tr>
+    </table>
+</script>
+
+<header>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Beauty Room</a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="#/orders"><i class="fa fa-shield"></i> Orders</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<div ng-view></div>
+
+<script src="app.js"></script>
+</body>
+</html>
