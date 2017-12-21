@@ -36,7 +36,7 @@ app.post('/api/order/add', orders.add);
 
 app.get('/api/auth', users.findById);
 
-app.set('port', process.env.PORT || 8080);
+app.set('port', process.env.PORT || 3000);
 
 app.listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));

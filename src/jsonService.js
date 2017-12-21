@@ -21,7 +21,7 @@ app.config(function ($routeProvider) {
 });
 
 app.controller('HomeController', function ($http, $scope) {
-    $http.get("http://localhost:8080/api/services")
+    $http.get("http://localhost:3000/api/services")
         .then(function (response) {
             var res = angular.fromJson(response.data);
             var selector = "\n";
@@ -32,7 +32,7 @@ app.controller('HomeController', function ($http, $scope) {
             document.getElementById("service").innerHTML = selector;
         });
 
-    $http.get("http://localhost:8080/api/specialists")
+    $http.get("http://localhost:3000/api/specialists")
         .then(function (response) {
             var res = angular.fromJson(response.data);
             var selector = "\n";
@@ -54,7 +54,7 @@ app.controller('HomeController', function ($http, $scope) {
 });
 
 app.controller('OrderController', function ($http, $scope) {
-    $http.get("http://localhost:8080/api/orders")
+    $http.get("http://localhost:3000/api/orders")
         .then(function (response) {
             var res = angular.fromJson(response.data);
             var row = "<tr>\n" +
@@ -80,6 +80,15 @@ app.controller('OrderController', function ($http, $scope) {
             document.getElementById("orderTable").innerHTML = row;
 
         });
+    $http.get("http://localhost:3000/api/specialists")
+        .then(function (response) {
+            var res = angular.fromJson(response.data);
+            var selector = "\n";
+            angular.forEach(res, function (spec) {
+                selector += "<option value=" + spec.id + " >" + spec.spec_name + "</option>\n";
+            });
+            document.getElementById("master1").innerHTML = selector;
+        });
 });
 
 function addOrder() {
@@ -97,7 +106,7 @@ function addOrder() {
 
     };
     $.post(
-        "http://localhost:8080/api/order/add",
+        "http://localhost:3000/api/order/add",
         data,
         function () {
             alert("You was reserved!");
